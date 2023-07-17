@@ -13,7 +13,7 @@ hostip = socket.gethostbyname(socket.gethostname())
 
 #외부 IP, 아래 사이트 호출 후 결과에서 추출
 req = requests.get("http://ipconfig.kr")
-print(req)
+print(req.text)
 out_ip = re.search(r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})', req.text)[1]
 
 @app.route("/")
